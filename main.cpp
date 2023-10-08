@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <locale.h>
-
+#include <limits>
 
 void rozbij_czynniki(int N);
 
@@ -13,7 +13,14 @@ int main() {
     for (;;) {
         std::cout << "Wprowadż liczbę: ";
         int N = 0;
-        std::cin >> N;
+        do {
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+            std::cin >> N;
+        } while (std::cin.fail());
+
         rozbij_czynniki(N);
     }
 
