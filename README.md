@@ -1,0 +1,1 @@
+# znajdowanie_wszystkich_dzielnikow_cpp
