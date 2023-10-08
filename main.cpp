@@ -30,7 +30,6 @@ void rozbij_czynniki(int N) {
     std::vector<int> dzielniki;
 
     for (int i = 2; i <= (N + 1); i++) {
-        if (i > 41) break;
         if (N % i == 0) {
             if (i != 0)
                 dzielniki.push_back(i);
@@ -56,7 +55,7 @@ void rozbij_czynniki(int N) {
              }*/
 
             int potegi = j, ile_raz = 1;
-            while (potegi < p) {
+            while (potegi <= p) {
                 if (i * potegi == p) {
                     mozliwe_kombinacje.push_back({ i });
                     for (int i = 1; i <= ile_raz; i++) {
